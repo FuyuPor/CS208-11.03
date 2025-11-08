@@ -1,8 +1,35 @@
 const addButton = document.getElementById("addButton");
 let results = document.getElementById("results");
 
-addButton.addEventListener("click", addBtnClick());
+addButton.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    addBtnClick();
+});
+
+window.addEventListener("DOMContentLoaded", domLoaded);
+
 
 function addBtnClick(){
+    let task = document.getElementById("addTask");
+    addTask(task.value);
+    task.value = " ";
+    
+}
 
+function domLoaded(){
+    let textBox = document.getElementById("addTask");
+    textBox.addEventListener("keyup", keyupHandler);
+}
+
+function addTask(NEWTASK){
+    let list = document.createElement("li");
+    list.innerHTML = "<span class='task-text'>" + NEWTASK  + "</span><button class='done-btn'>&#10006;</button>";
+    document.querySelector("ol").appendChild(list);
+}
+
+function keyupHandler(event){
+    let task = document.getElementById("addTask").value;
+    if (event.key == "Enter") {
+        addTask(task);
+    }
 }
