@@ -11,10 +11,11 @@ window.addEventListener("DOMContentLoaded", domLoaded);
 
 function addBtnClick(){
     let task = document.getElementById("addTask").value;
-    addTask(task);
-    document.getElementById("addTask").value = "";
-    textBox.focus()
-    
+    if (task != ""){
+        addTask(task);
+        document.getElementById("addTask").value = "";
+        textBox.focus()
+    }
 }
 
 function domLoaded(){
