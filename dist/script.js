@@ -2,12 +2,11 @@ const addButton = document.getElementById("addButton");
 const textBox = document.getElementById("addTask");
 
 addButton.addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent the default link behavior
+    event.preventDefault(); 
     addBtnClick();
 });
 
 window.addEventListener("DOMContentLoaded", domLoaded);
-
 
 function addBtnClick(){
     let task = document.getElementById("addTask").value;

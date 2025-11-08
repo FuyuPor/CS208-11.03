@@ -1,6 +1,36 @@
 h1{
   font-family: Arial, Helvetica, sans-serif;
 }
+
 p{
   font-family: Arial, Helvetica, sans-serif;
+}
+
+li{
+  display: list-item;
+  width: 225px;
+  justify-content: space-between;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style:decimal;
+  list-style-type: decimal;
+}
+
+.done-btn{
+  background: transparent;
+  color: rgb(190, 190, 190);
+  border-color: white;
+  border-style: solid;
+}
+
+#addButton{
+  background-color: lightgrey;
+  border-width: 1px;
+  border-radius: 10%;
+  color: rgb(49, 49, 49);
+}
+
+#addTask{
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
 }
