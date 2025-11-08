@@ -1,5 +1,5 @@
 const addButton = document.getElementById("addButton");
-let results = document.getElementById("results");
+const textBox = document.getElementById("addTask");
 
 addButton.addEventListener("click", function(event) {
     event.preventDefault(); // Prevent the default link behavior
@@ -10,14 +10,14 @@ window.addEventListener("DOMContentLoaded", domLoaded);
 
 
 function addBtnClick(){
-    let task = document.getElementById("addTask");
-    addTask(task.value);
-    task.value = " ";
+    let task = document.getElementById("addTask").value;
+    addTask(task);
+    document.getElementById("addTask").value = "";
+    textBox.focus()
     
 }
 
 function domLoaded(){
-    let textBox = document.getElementById("addTask");
     textBox.addEventListener("keyup", keyupHandler);
 }
 
@@ -28,8 +28,7 @@ function addTask(NEWTASK){
 }
 
 function keyupHandler(event){
-    let task = document.getElementById("addTask").value;
     if (event.key == "Enter") {
-        addTask(task);
+        addBtnClick();
     }
 }
